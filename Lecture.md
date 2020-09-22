@@ -8,7 +8,14 @@ Spatial Joins are a powerful feature of PostGIS. They're made much more so becau
 
 Let's take a look at SEPTA's GTFS data:
 * Septa data feed: http://www3.septa.org/developer/
-* Easily download from the repo: ``
+* Easily download from the repo: `https://raw.githubusercontent.com/MUSA-509/week-4-spatial-joins-and-indexes/master/data/septa_bus_stops.txt`
+
+```SQL
+UPDATE andyepenn.septa_bus_stops
+SET the_geom = ST_SetSRID(ST_MakePoint(stop_lon, stop_lat), 4326)
+```
+
+Filling `the_geom` with a geometry. Carto has [database triggers](https://www.postgresql.org/docs/12/sql-createtrigger.html).
 
 ## Outline
 
