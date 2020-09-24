@@ -21,7 +21,7 @@ First, import the data into your Carto account.
 ## 1. Add geometries to tables
 
 1. `septa_rail_stops`
-2. `septa_rail_shapes` -- NOTE, only do UPDATEs for ranges of `cartodb_id`. E.g., add `WHERE cartodb_id between 1 and 40000`, between 40000 and 80000, and 80000 and 102000 (max is a bit over 101k). Otherwise, the operation will timeout due to query limits on Carto's platform.
+2. `septa_rail_shapes` -- NOTE, only do UPDATEs for ranges of `cartodb_id`. E.g., add `WHERE cartodb_id between 1 and 40000`, between 40000 and 80000, and 80000 and 102000 (max is a bit over 101k). Otherwise, the operation will timeout due to query limits on Carto's platform. See [note](#Indexes) on building an index on `geography` types.
 
 ```SQL
 -- add your query here
@@ -139,4 +139,13 @@ In the `SELECT`, make sure to have:
 
 ```SQL
 -- write your query here
+```
+
+## Indexes
+
+You can create indexes for using geography types. For example, the query for finding the number of buildings within 800 meters, we use two tables. Add a geography index to each to get potential speedups for query results.
+
+```SQL
+CREATE INDEX septa_rail_stops_geography_idx ON  andyepenn.septa_rail_stops USING GIST(geography(the_geom));
+CREATE INDEX philadelphia_osm_buildings_geography_idx ON  andyepenn.philadelphia_osm_buildings USING GIST(geography(the_geom))
 ```

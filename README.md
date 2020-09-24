@@ -4,7 +4,7 @@
 * Lecture
   * [Slide deck](https://docs.google.com/presentation/d/1f9gCj0j4f_6pPvqb4g99DWti6ftjUacydxZwY8Ipb_o/edit?usp=sharing)
   * [Code snippets](Lecture.md)
-* Lab
+* [Lab](Lab.md)
 * [Recommended Readings](#recommended-reading)
 
 ## Homework
@@ -21,7 +21,7 @@ Follow along: [Lecture.md](Lecture.md)
 
 ## Lab
 
-Posted on Thursday
+[See here](Lab.md)
 
 
 ## Recommended Reading
