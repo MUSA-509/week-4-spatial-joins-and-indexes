@@ -9,7 +9,7 @@
 
 ## Homework
 
-* Code assignment (assigned Sept 24, due Oct 1st at 11:59pm ET)
+* Code assignment (assigned Sept 24, due Oct 6th at 11:59pm ET)
 * Signup for Google Cloud (free tier) to get access to Google BigQuery
   * Signup here: <https://cloud.google.com/free>
   * We will use Google BigQuery next week, it has a generous free tier
