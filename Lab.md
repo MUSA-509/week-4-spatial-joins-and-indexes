@@ -27,7 +27,9 @@ First, import the data into your Carto account.
 -- add your query here
 ```
 
-## 2. Create rail routes using the `shapes.txt` table, grouping by appropriate fields. Make sure there is an ORDER BY in the [`ST_MakeLine`](https://postgis.net/docs/ST_MakeLine.html) too.
+## 2. Create rail routes
+
+Use the `shapes.txt` table, grouping by appropriate fields. Make sure there is an ORDER BY in the [`ST_MakeLine`](https://postgis.net/docs/ST_MakeLine.html) too.
 
 ```SQL
 -- add your query here
@@ -44,13 +46,17 @@ FROM (
 ) as _w
 ```
 
-## 3. Using the query from the previous result, find the length of each shape in meters
+## 3. Find the length of each shape in meters
+
+Use the query from the previous result and add a new expression to calculate the length of the shapes/routes.
 
 ```SQL
 -- put your query here
 ```
 
-## 4. For each stop, find the number of buildings in Philadelphia county within 800 meters (use 0.008 as an approximation to avoid casting to geography and avoid DB timeouts).
+## 4. Find the number of buildings nearby
+
+For each stop, find the number of buildings in Philadelphia county within 800 meters (use 0.008 as an approximation to avoid casting to geography which can lead to DB timeouts).
 
 **Note:** Make sure to account for cases where there are no buildings (i.e., outside Philadelphia county).
 
@@ -58,7 +64,9 @@ FROM (
 -- put your query here
 ```
 
-## 5. Create a crosswalk that pairs a `shape_id` with a `route_id`. Build it from the `septa_rail_trips` table.
+## 5. Create a crosswalk table
+
+Create a virtual table (a query) that pairs a `shape_id` with a `route_id`. Build it from the `septa_rail_trips` table. We'll use this later to JOIN with information in other tables.
 
 To keep things simple, let's only pair one `shape_id` with one `route_id`. Use the [`DISTINCT ON()`](https://www.postgresql.org/docs/12/sql-select.html#SQL-DISTINCT) to select only one `shape_id` per `route_id`.
 
