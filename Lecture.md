@@ -177,7 +177,7 @@ DROP INDEX stops_the_geom_idx;
 Now run the JOIN query:
 
 ```SQL
-SELECT c.the_geom, c.geoid, coalesce(count(ind.*), 0) AS num_stations
+SELECT c.the_geom, c.geoid, coalesce(count(bus.*), 0) AS num_stations
 FROM andyepenn.philadelphia_cbgs_w_population AS c
 JOIN andyepenn.septa_bus_stops AS bus 
 ON ST_Intersects(c.the_geom, bus.the_geom)
