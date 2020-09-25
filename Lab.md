@@ -6,7 +6,7 @@ First, import the data into your Carto account.
 * Septa GTFS data: `https://github.com/MUSA-509/week-4-spatial-joins-and-indexes/blob/master/data/septa_gtfs_rail.zip?raw=true`
 * OSM buildings for Philadelphia: `https://raw.githubusercontent.com/MUSA-509/week-4-spatial-joins-and-indexes/master/data/philadelphia_osm_buildings.geojson`
 
-**Files** -- I've renamed them to be `septa_gtfs_x`, but GTFS come with standardized names.
+**Files** -- I've renamed them to be `septa_rail_x`, but GTFS come with standardized names.
 * [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt) - geospatial 'shape' of a full trip on any route as a collection of ordered lat/long pairs
   - `shape_id` - unique ID referencing the shape traced out by connecting all points with the same ID ordered by `shape_pt_sequence`. Note: multiple `shape_id`s correspond to a `route_id`. E.g., there may be the same train line but rush-hour service, express service, weekend service, etc.
   - `shape_pt_lat` - latitude of point part of shape
