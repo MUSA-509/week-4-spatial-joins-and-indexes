@@ -25,13 +25,13 @@ First, import the data into your Carto account.
 
 ```SQL
 UPDATE septa_rail_shapes
-SET the_geom = ST_SetSRID(ST_MakePoint(shape_pt_lon, shape_pt_lat))
+SET the_geom = ST_SetSRID(ST_MakePoint(shape_pt_lon, shape_pt_lat), 4326)
 WHERE cartodb_id BETWEEN 1 and 40000;
 UPDATE septa_rail_shapes
-SET the_geom = ST_SetSRID(ST_MakePoint(shape_pt_lon, shape_pt_lat))
+SET the_geom = ST_SetSRID(ST_MakePoint(shape_pt_lon, shape_pt_lat), 4326)
 WHERE cartodb_id BETWEEN 40000 and 80000;
 UPDATE septa_rail_shapes
-SET the_geom = ST_SetSRID(ST_MakePoint(shape_pt_lon, shape_pt_lat))
+SET the_geom = ST_SetSRID(ST_MakePoint(shape_pt_lon, shape_pt_lat), 4326)
 WHERE cartodb_id BETWEEN 80000 and 102000;
 ```
 
